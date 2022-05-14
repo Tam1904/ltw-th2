@@ -5,8 +5,8 @@ Lớp model chứa thực thể product
 Lớp dao là nơi xử lý vào ra cơ sở dữ liệu
 
 HomeController xử lý các yêu cầu request:
-- GetMapping("/") sẽ chuyển đến đến trang index.html.
-- @GetMapping("/view") xử lý các request trên đường dẫn /view khi có yêu cầu view từ trang index tại đây lấy ra list product từ csdl bằng hàm getProducts() sau đó gắn vào model trả về cho trang product.html
+- @GetMapping("/") sẽ xử lý request đến đường dẫn http://localhost:8080/ chuyển đến đến trang index.html.
+- @GetMapping("/view") xử lý các request trên đường dẫn /view khi có yêu cầu view từ trang index.html, tại đây lấy ra list product từ csdl bằng hàm getProducts() sau đó gắn vào model trả về cho trang product.html
 -> product.html dùng th:each đọc list products để hiển thị
 - @GetMapping("/add") tại đây khi có yêu cầu add product từ trang product.html thì ta khởi tạo 1 product đặt giá trị mặc định, do add và update dùng chung 1 trang nên ta dùng 1 type để phân biệt khi nào add và update sẽ dùng các hàm tương ứng. product và type sẽ được gắn vào model trả về cho trang update.html
 - @GetMapping("/edit") tại đây tiếp nhận yêu cầu edit product từ product.html, ta sẽ dùng hàm getProduct(code) lấy ra sản phẩm theo code  rồi gắn vào model, và type(mô tả ở add) trả về cho trang update.html.
