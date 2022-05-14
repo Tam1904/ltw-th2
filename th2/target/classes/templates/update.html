@@ -27,7 +27,7 @@
             <label> Product Price </label>
             <input type = "text" name="price" th:value="${product.price}"><br>
             
-            <input type ="text" th:value="${type}" name="type">
+            <input type ="hidden" th:value="${type}" name="type">
             <input type ="submit" th:value="${type}" name="update">
             <input type ="submit" value="View" name ="view">
         </form>
