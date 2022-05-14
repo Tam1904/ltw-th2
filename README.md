@@ -1,5 +1,5 @@
 # ltw-th2
-sử dụng spring jdbc để kết nối CSDL
+sử dụng spring data jdbc để kết nối CSDL
 Lớp controller là nơi xử lý các resquest
 Lớp model chứa thực thể product
 Lớp dao là nơi xử lý vào ra cơ sở dữ liệu
