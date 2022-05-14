@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Product Page</title>
+    </head>
+    <body>
+        <h1>Products</h1>
+        <table cellpadding="5" border=1>
+            <tr valign="bottom">
+                <td align="left"><b>Code</b></td>
+                <td align="left"><b>Description</b></td>
+                <td align="left"><b>Price</b></td>
+                <td align="left"></td>
+                <td align="left"></td>
+
+            </tr>
+            <th:block th:each = "product : ${products}">
+                <tr valign="top">
+                    <td th:text="${product.code}"></td>
+                    <td th:text="${product.description}"></td>
+                    <td th:text="${product.convert}"></td>
+                    <td align="left"><a th:href="@{/edit(code = ${product.code},type=Edit)}" >Edit</a></td>
+                    <td align="left"><a th:href="@{/delete(code = ${product.code})}" >Delete</a></td>
+                </tr>
+            </th:block>
+
+        </table>
+        <a style="margin-top: 20px; display: block" th:href="@{/add(type=Add)}" ><button>Add product</button></a>
+    </body>
+</html>

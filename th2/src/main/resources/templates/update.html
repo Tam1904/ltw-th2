@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>UpdateProduct Page</title>
+        <link rel="stylesheet" th:href="@{/main.css}" type="text/css"/>
+    </head>
+    <body>
+        <h1>Update Product</h1>
+        <!--<form th:action="@{/UpdateProduct}" method="post" th:object="${product}">-->
+        <form th:action="@{/UpdateProduct}" method="post">
+            <th:block th:if="${messOne!=null}">
+                <span style="display: block;" th:text="${messOne}"></span></br>
+            </th:block>
+            <label> Product Code </label>
+            <input type = "text" name="code" th:value="${product.code}"><br>
+            
+            <th:block th:if="${messTwo!=null}">
+                <span style="display: block;" th:text="${messTwo}"></span></br>
+            </th:block>  
+            <label> Product Description </label>
+            <input type = "text" name="description" th:value="${product.description}"><br>
+            
+           	<th:block th:if="${messThree!=null}">
+                <span style="display: block;" th:text="${messThree}"></span></br>
+            </th:block>
+            <label> Product Price </label>
+            <input type = "text" name="price" th:value="${product.price}"><br>
+            
+            <input type ="text" th:value="${type}" name="type">
+            <input type ="submit" th:value="${type}" name="update">
+            <input type ="submit" value="View" name ="view">
+        </form>
+    </body>
+</html>
